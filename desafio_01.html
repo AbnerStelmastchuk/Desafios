@@ -51,6 +51,10 @@
 </body>
 
 <script>
-
+    document.querySelectorAll('[wm-folder]').forEach(folder => {
+        folder.onclick = function (e){
+            console.log('teste')
+        }
+    })
 </script>
 </html>
