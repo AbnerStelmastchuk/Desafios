@@ -7,64 +7,50 @@
     <title>Desafio Slider</title>
 </head>
 <body>
-    <div class="slides">
+    <div class="slider">
         <!-- Starting Imagens -->
         <p class="slides">
-            <img src="images/demonSlayer.jpg" alt="">
-            <img src="images/Tsuna.jpg" alt="">
-            <img src="images/Naruto.jpg" alt="">
-            <img src="images/onePiece.jpg" alt="">
-        </p>
-
-        <!--Starting Btn's-->
-        <div class="btn-manual">
+            <!-- Radio buttons start -->
             <input type="radio" name="radio-btn" id="radio1">
             <input type="radio" name="radio-btn" id="radio2">
             <input type="radio" name="radio-btn" id="radio3">
             <input type="radio" name="radio-btn" id="radio4">
-        </div>
+            <!--Radio buttons end-->
+            <!--Slide imagens start-->
+            <div class="slide first">
+                <img src="images/demonSlayer.jpg" alt="DemonSlayer">
+            </div>
+            <div class="slide">
+                <img src="images/Naruto.jpg" alt="Naruto">
+            </div>
+            <div class="slide">
+                <img src="images/Tsuna.jpg" alt="Tsuna">
+            </div>
+            <div class="slide">
+                <img src="images/onePiece.jpg" alt="OnePiece">
+            </div>
 
-        <!-- Stating Manual-->
-        <div class="navegacao-manual">
-            <label for="radio1" class="manual-btn"></label>
-            <label for="radio2" class="manual-btn"></label>
-            <label for="radio3" class="manual-btn"></label>
-            <label for="radio4" class="manual-btn"></label>
-        </div>
-
-        <!-- Startgin Auto-->
-        <div class="navegacao-auto">
-            <div class="auto-btn1"></div>
-            <div class="auto-btn2"></div>
-            <div class="auto-btn3"></div>
-            <div class="auto-btn4"></div>
-
-        </div>
+            <!-- Starting Auto-Navigation!! -->
+            <div class="auto-navegacao">
+                <div class="auto-btn1"></div>
+                <div class="auto-btn2"></div>
+                <div class="auto-btn3"></div>
+                <div class="auto-btn4"></div>
+            </div>
+            <!-- Auto-Navigation end!!-->
+            <!-- Stating Manual-Navigation!!-->
+            <div class="manual-navegacao">
+                <label for="radio1" class="manual-btn"></label>
+                <label for="radio2" class="manual-btn"></label>
+                <label for="radio3" class="manual-btn"></label>
+                <label for="radio4" class="manual-btn"></label>
+            </div>
+            <!-- Manual-Navigation end!!-->
+        </p>
+        <!--Image slider end-->
     </div>
-
 </body>
 <style>
-    .circular {
-        width: 513;
-        background-color: #444;
 
-    }
-
-    .texto {
-        width: 400px;
-    }
-
-    .texto img {
-        margin-right:  10;
-    }
-
-    .cidade {
-        width: 513px;
-        height: 342px;
-        background-image: url('http://files.cod3r.com.br/curso-web/imagem4.jpg');
-        background-position: center;
-        background-repeat: no-repeat;
-        background-size: 200%;
-    }
 </style>
 </html>
