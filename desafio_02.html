@@ -1,15 +1,88 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Desafio Slider</title>
+    <style>
+        body{
+            margin: 0;
+            padding: 0;
+            width: 100vh;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: #444;
+        }
+    
+        .slider{
+            width: 800px;
+            height: 500px;
+            border-radius: 10px;
+            overflow: hidden;
+        }
+    
+        .slides{
+            width: 500%;
+            height: 500px;
+            display: flex;
+        }
+    
+        .slider input{
+            display: none;
+        }
+        .slide{
+            width: 20%;
+            transition: 2s;
+        }
+        .slide img{
+            width: 800px;
+            height: 500px;
+        }
+        .manual-navegacao{
+            position: absolute;
+            width: 800px;
+            margin-top: -40px;
+            display: flex;
+            justify-content: center;
+        }
+    
+        .manual-btn{
+            border: 2px solid rgb(5, 235, 235);
+            padding: 5px;
+            border-radius: 10px;
+            cursor:pointer;
+            transition: 1s;
+        }
+        .manual-btn:not(:last-child){
+            margin-right: 40px;
+        }
+        .manual-btn:hover{
+            background: #444;
+        }
+    
+        #radio1:checked~.first{
+            margin-left: 0%;
+        }
+        #radio2:checked~.first{
+            margin-left: -20%;
+        }
+        #radio3:checked~.first{
+            margin-left: -40%;
+        }
+        #radio4:checked~.first{
+            margin-left: -60%;
+        }
+    </style>
 </head>
+
 <body>
     <div class="slider">
         <!-- Starting Imagens -->
-        <p class="slides">
+        <div class="slides">
             <!-- Radio buttons start -->
             <input type="radio" name="radio-btn" id="radio1">
             <input type="radio" name="radio-btn" id="radio2">
@@ -18,39 +91,36 @@
             <!--Radio buttons end-->
             <!--Slide imagens start-->
             <div class="slide first">
-                <img src="images/demonSlayer.jpg" alt="DemonSlayer">
+                <img src="images/demonSlayer.jpg" alt="">
             </div>
             <div class="slide">
-                <img src="images/Naruto.jpg" alt="Naruto">
+                <img src="images/Naruto.jpg" alt="">
             </div>
             <div class="slide">
-                <img src="images/Tsuna.jpg" alt="Tsuna">
+                <img src="images/Tsuna.jpg" alt="">
             </div>
             <div class="slide">
-                <img src="images/onePiece.jpg" alt="OnePiece">
+                <img src="images/onePiece.jpg" alt="">
             </div>
-
-            <!-- Starting Auto-Navigation!! -->
-            <div class="auto-navegacao">
-                <div class="auto-btn1"></div>
-                <div class="auto-btn2"></div>
-                <div class="auto-btn3"></div>
-                <div class="auto-btn4"></div>
-            </div>
-            <!-- Auto-Navigation end!!-->
-            <!-- Stating Manual-Navigation!!-->
-            <div class="manual-navegacao">
-                <label for="radio1" class="manual-btn"></label>
-                <label for="radio2" class="manual-btn"></label>
-                <label for="radio3" class="manual-btn"></label>
-                <label for="radio4" class="manual-btn"></label>
-            </div>
-            <!-- Manual-Navigation end!!-->
-        </p>
+        </div>
+        <!-- Starting Auto-Navigation!! -->
+        <div class="auto-navegacao">
+            <div class="auto-btn1"></div>
+            <div class="auto-btn2"></div>
+            <div class="auto-btn3"></div>
+            <div class="auto-btn4"></div>
+        </div>
+        <!-- Auto-Navigation end!!-->
+        <!-- Stating Manual-Navigation!!-->
+        <div class="manual-navegacao">
+            <label for="radio1" class="manual-btn"></label>
+            <label for="radio2" class="manual-btn"></label>
+            <label for="radio3" class="manual-btn"></label>
+            <label for="radio4" class="manual-btn"></label>
+        </div>
+        <!-- Manual-Navigation end!!-->
         <!--Image slider end-->
     </div>
 </body>
-<style>
 
-</style>
 </html>
