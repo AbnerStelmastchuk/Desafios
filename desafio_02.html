@@ -76,6 +76,39 @@
         #radio4:checked~.first{
             margin-left: -60%;
         }
+
+        .auto-navegacao{
+            position: absolute;
+            display: flex;
+            width: 800px;
+            justify-content: center;
+            margin-top: 460px;
+        }
+
+        .auto-navegacao div{
+            border: 2px solid #444;
+            padding: 5px;
+            border-radius: 10px;
+            transition: 1s;
+        }
+
+        .auto-navegacao div:not(:last-child){
+            margin-right: 40px;
+        }
+
+        #radio1:checked~ .auto-navegacao .auto-btn1{
+            background: #444;
+        }
+        #radio2:checked~ .auto-navegacao .auto-btn2{
+            background: #444;
+        }
+        #radio3:checked~ .auto-navegacao .auto-btn3{
+            background: #444;
+        }
+        #radio4:checked~ .auto-navegacao .auto-btn4{
+            background: #444;
+        }
+
     </style>
 </head>
 
@@ -121,6 +154,17 @@
         <!-- Manual-Navigation end!!-->
         <!--Image slider end-->
     </div>
+
+    <script type="text/javascript">
+    var count = 1
+    setInterval(function(){
+        document.getElementById('radio' + count).checked = true;
+        count++;
+        if(count > 4){
+            count = 1;
+        }
+    }, 5000)
+    </script>
 </body>
 
 </html>
