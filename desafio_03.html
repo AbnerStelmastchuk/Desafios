@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Desafio03</title>
+
+    <style>
+        .controle{
+            max-width: 800px;
+        }
+
+        #progresso {
+            height: 20px;
+            border: solid 1px #444;
+            margin: 20px;
+            margin-left: 0px;
+        }
+
+        #progresso {
+            background-color: red;
+            color: #fff;
+            text-align: right;
+            font-size: 14px;
+            border: 1px solid #000;
+            width: 0%;
+        }
+
+        .buttons button {
+            width: 150px;
+            height: 50px;
+            border-radius: 50%;
+            border: 1px solid #000;
+            margin: 10px;
+        }
+
+        .buttons button:hover {
+            background-color: #ccc;
+        }
+    </style>
+
+</head>
+
+<body>
+    <video id='meuVideo'  controlsList="nodownload" width="800" height="450">
+        <source src="videos/video.mp4" type="video/mp4">
+    </video>
+
+    <!-- Bar Progress Starting!-->
+    <div class='controle'>
+        <div wm-progresso="meuVideo" id='progresso'></div>
+    </div>
+
+    <!-- Buttons Starting-->
+    <div class="buttons">
+        <button wm-play="meuVideo">Play</button>
+        <button wm-pause="meuVideo">Pause</button>
+    </div>
+
+    <script>
+        const video = document.getElementById('meuVideo')
+        const playbtn = document.querySelector('[wm-play]')
+        const pausebtn = document.querySelector('[wm-pause]')
+
+        playbtn.onclick = () => {
+            if (video.paused) {
+                const playState = 'play'
+                video[playState]()
+            }
+        }
+
+        pausebtn.onclick = () => {
+            if (video.played) {
+                const playState = 'pause'
+                video[playState]()
+            }
+        }
+        
+        setInterval(function(){
+            const porcentagem = (video.currentTime / video.duration) * 100
+            document.getElementById('progresso').style.width = `${porcentagem}%`
+        }, 500) 
+
+    </script>
+</body>
+</html>
